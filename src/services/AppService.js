@@ -13,7 +13,7 @@ baseUrl="http://localhost:9000/api/"
   return data.data;
 }
  async update(url,item){
-  let data= await  axios.post(`${this.baseUrl}${url}`,{...item})
+  let data= await  axios.put(`${this.baseUrl}${url}`,{...item})
   console.log(data);
   
   return data.data;
@@ -25,24 +25,26 @@ baseUrl="http://localhost:9000/api/"
  
 }
 
-export class OrgService {
- common= new CommonService();
- url='organizations'
- 
+export class AppService {
+ commonService= new CommonService();
+  url;
+ constructor(url){
+    this.url=url
+ }
 getAll(){
-  return this.common.get(this.url);
+  return this.commonService.get(this.url);
 }
 getById(id){
-  return this.common.get(`/${this.url}`);
+  return this.commonService.get(`/${this.url}`);
 }
  create(item){
- return this.common.create(this.url,item)
+ return this.commonService.create(this.url,item)
 }
  update(id,item){
-  return this.common.update(`${this.url}/${id}`,item)
+  return this.commonService.update(`${this.url}/${id}`,item)
   
 }
  delete(id){
-     return this.common.delete(`${this.url}/${id}`)
+     return this.commonService.delete(`${this.url}/${id}`)
 }
 }

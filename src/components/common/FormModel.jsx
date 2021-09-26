@@ -1,12 +1,10 @@
-import React, { useState } from "react";
-import { Modal, Button } from "react-bootstrap";
+import React from "react";
+import { Modal } from "react-bootstrap";
 
 export default function FormModel(props) {
-  const [show, setShow] = useState(true);
-  const handleClose = () => setShow(false);
   const childWithProps = React.Children.map(props.children, (child) => {
     if (React.isValidElement(child)) {
-      return React.cloneElement(child, { handleClose });
+      return React.cloneElement(child, { ...props });
     }
     return child;
   });
@@ -14,8 +12,8 @@ export default function FormModel(props) {
     <>
       <>
         <Modal
-          show={show}
-          onHide={handleClose}
+          show={props.show}
+          onHide={props.onClose}
           backdrop="static"
           keyboard={false}
         >

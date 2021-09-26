@@ -2,7 +2,14 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import ErrorPrinter from "../common/PrintError";
 import { Button, Modal } from "react-bootstrap";
-function CreateOrg({ onAdd, onUpdate, heading, onClose, existingData, mode }) {
+function CreateClass({
+  onAdd,
+  onUpdate,
+  heading,
+  onClose,
+  existingData,
+  mode,
+}) {
   const {
     register,
     handleSubmit,
@@ -82,4 +89,4 @@ function CreateOrg({ onAdd, onUpdate, heading, onClose, existingData, mode }) {
   );
 }
 
-export default CreateOrg;
+export default CreateClass;

@@ -1,28 +1,26 @@
 import React from "react";
 import { AppUrlConst } from "../../services/AppUrlConst";
 import AppList from "../common/AppList";
-import CreateOrg from "./CreateOrg";
-function OrgList() {
+import SubjectForm from "./SubjectForm";
+function SubjectList() {
   const columns = [
     { label: "Id", name: "id" },
     { label: "Name", name: "name" },
     { label: "Description", name: "description" },
-    { label: "Address", name: "address" },
   ];
   const permission = { read: true, edit: true, delete: false };
   return (
     <div>
-      <h1>Organizations</h1>
-      {/* <OrgList /> */}
+      <h1>Standard List</h1>
       <AppList
         columns={columns}
         permission={permission}
-        url={AppUrlConst.Organization()}
+        url={AppUrlConst.Subject()}
       >
-        <CreateOrg />
+        <SubjectForm />
       </AppList>
     </div>
   );
 }
 
-export default OrgList;
+export default SubjectList;

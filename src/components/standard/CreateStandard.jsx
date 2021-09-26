@@ -2,7 +2,14 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import ErrorPrinter from "../common/PrintError";
 import { Button, Modal } from "react-bootstrap";
-function CreateOrg({ onAdd, onUpdate, heading, onClose, existingData, mode }) {
+function CreateStandard({
+  onAdd,
+  onUpdate,
+  heading,
+  onClose,
+  existingData,
+  mode,
+}) {
   const {
     register,
     handleSubmit,
@@ -39,34 +46,6 @@ function CreateOrg({ onAdd, onUpdate, heading, onClose, existingData, mode }) {
               />
               {errors.name && <ErrorPrinter message={errors.name.message} />}
             </div>
-            <div className="mb-3">
-              <label className="form-label">Description</label>
-              <input
-                type="text"
-                id="disabledTextInput"
-                className="form-control"
-                placeholder="name"
-                {...register("description", { required: "name is Required" })}
-              />
-              {errors.description && (
-                <ErrorPrinter message={errors.description.message} />
-              )}
-            </div>
-            <div className="mb-3">
-              <div className="form-floating">
-                <textarea
-                  {...register("address", { required: "name is Required" })}
-                  className="form-control"
-                  placeholder="Leave a comment here"
-                  id="floatingTextarea2"
-                  style={{ height: 100 }}
-                ></textarea>
-                <label>Address</label>
-              </div>
-              {errors.address && (
-                <ErrorPrinter message={errors.address.message} />
-              )}
-            </div>
           </fieldset>
         </Modal.Body>
         <Modal.Footer>
@@ -82,4 +61,4 @@ function CreateOrg({ onAdd, onUpdate, heading, onClose, existingData, mode }) {
   );
 }
 
-export default CreateOrg;
+export default CreateStandard;

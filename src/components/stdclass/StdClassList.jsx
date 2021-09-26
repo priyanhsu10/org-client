@@ -1,8 +1,6 @@
 import React from "react";
-import { AppUrlConst } from "../../services/AppUrlConst";
-import AppList from "../common/AppList";
-import CreateOrg from "./CreateOrg";
-function OrgList() {
+
+function StdClassList() {
   const columns = [
     { label: "Id", name: "id" },
     { label: "Name", name: "name" },
@@ -19,10 +17,10 @@ function OrgList() {
         permission={permission}
         url={AppUrlConst.Organization()}
       >
-        <CreateOrg />
+        <CreateClass />
       </AppList>
     </div>
   );
 }
 
-export default OrgList;
+export default StdClassList;

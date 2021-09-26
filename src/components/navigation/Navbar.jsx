@@ -5,6 +5,7 @@ const getRoutes = () => {
   const routes = [];
   routes.push({ key: "/organisation", value: "Organisation" });
   routes.push({ key: "/department", value: "Department" });
+  routes.push({ key: "/standard", value: "Standard" });
   routes.push({ key: "/branch", value: "Branch" });
   routes.push({ key: "/class", value: "Class" });
   routes.push({ key: "/subject", value: "Subject" });

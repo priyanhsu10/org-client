@@ -10,6 +10,7 @@ import SubjectHome from "../subject/SubjectHome";
 import ExamHome from "../exams/ExamHome";
 import Home from "../Home";
 import StaffHome from "../staff/StaffHome";
+import StandardHome from "../standard/StandardHome";
 function AppContainer() {
   return (
     <Router>
@@ -26,6 +27,7 @@ function AppContainer() {
           <Route path="/student" component={StudentHome} />
           <Route path="/staff" component={StaffHome} />
           <Route path="/exams" component={ExamHome} />
+          <Route path="/standard" component={StandardHome} />
         </Switch>
       </div>
     </Router>
